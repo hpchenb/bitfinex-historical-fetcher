@@ -40,15 +40,10 @@ from datetime import datetime, timezone, timedelta
 from collections import defaultdict
 
 # ============================================================
-# ACCOUNTS
+# ACCOUNTS (loaded from central config file)
 # ============================================================
-ACCOUNTS = [
-    {"name": "a11",        "api_key": "c94f96ff9f74a72f662b5639e188a0ecc0d07d4d11c", "api_secret": "818b95999a76bdb45f89c8b8a8e987b912636cbdd42"},
-    {"name": "hpchen",     "api_key": "2ad754108e17a90b2bbdea859638c2fddf3154e1848", "api_secret": "59f5d5e5945cc953c542b7e482bc366dd3ce3ba8874"},
-    {"name": "tina.ding",  "api_key": "TeerMOmZszI3gDdwwGOogAMeBxZV67UkywTNutyh4TW", "api_secret": "FvhMuGxn94BecqY3OKcsTG9mKQwXg9g1UT4F99yzN2b"},
-    {"name": "jessie.chen","api_key": "eFyrUZdFeG32AmgVLrvzGMH1lv9yM6giimoAcDKHEnb", "api_secret": "unqcYMUujLSEub6avUFL8fT8ObjxvK3E8Bnh1T4RWxb"},
-    {"name": "yihlan.chen","api_key": "ZZ1tPQE6IXBzMsCcHmdVryHwMkQftv8O4WpsbpderQf", "api_secret": "p16SdPIJ6xdoBur0gnUetLwjR4odzIjpcK0354ZscyE"},
-]
+with open(os.path.join(os.path.dirname(__file__), "accounts.json")) as _f:
+    ACCOUNTS = json.load(_f)
 
 # ============================================================
 # BITFINEX API (raw - for reference)
